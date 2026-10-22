@@ -137,14 +137,14 @@ export default function HomePage() {
               <p className="stage-footnote">Compatible sensors must be configured for their selected areas. Sensor options may vary by package.</p>
             </div>
 
-            <div className="flow-arrow" aria-label="Sensors connect to the controller"><span>→</span><small>Supported configuration</small></div>
+            <div className="flow-arrow" aria-label="Sensors connect to the controller"><span>→</span></div>
 
             <div className="workflow-stage controller-stage">
               <div className="stage-heading"><span>STAGE B</span><h3>Central Controller</h3></div>
               <div className="controller-illustration"><div className="controller-icon"><WorkflowIcon kind="hub" /></div><span className="controller-brand">SEQUREPLUS</span><h4>SequrePlus Ace</h4><p>Connects compatible sensors and coordinates the configured security response.</p></div>
             </div>
 
-            <div className="flow-arrow controller-arrow" aria-label="The controller triggers configured alerts"><span>→</span><small>Configured response</small></div>
+            <div className="flow-arrow controller-arrow" aria-label="The controller triggers configured alerts"><span>→</span></div>
 
             <div className="workflow-stage response-stage">
               <div className="stage-heading"><span>STAGE C</span><h3>Immediate Alert Response</h3></div>
@@ -166,34 +166,24 @@ export default function HomePage() {
       <section className="cctv-comparison section-pad" aria-labelledby="cctv-comparison-title">
         <div className="page-width">
           <div className="comparison-heading">
-            <div className="eyebrow"><span className="eyebrow-line" /> Active security response</div>
-            <h2 id="cctv-comparison-title">Don&apos;t Just Record a Theft.<br /><span>Help Stop Unauthorized Entry.</span></h2>
-            <p>CCTV can help you see what happened, but recorded footage alone may not stop an intruder in the moment. SequrePlus Ace adds an active layer of security by detecting configured events through compatible sensors, sounding a loud siren and initiating calls to up to five registered contact numbers.</p>
+            <div className="eyebrow">SMART SECURITY. PROACTIVE PROTECTION.</div>
+            <h2 id="cctv-comparison-title">CCTV Records. SequrePlus Alerts.</h2>
+            <p>CCTV can help you see what happened after an incident. SequrePlus Ace adds an active layer of security by detecting configured events, sounding a loud siren, and calling up to 5 registered contact numbers to help you respond quickly.</p>
           </div>
           <div className="comparison-cards">
             <article className="comparison-card cctv-card">
-              <div className="comparison-visual" role="img" aria-label="Illustration of a CCTV camera monitoring a property">
-                <div className="camera-device"><span className="camera-lens" /><span className="camera-mount" /></div>
-                <div className="camera-view"><span /><span /><span /></div>
-              </div>
               <div className="comparison-card-content">
-                <span className="comparison-kicker">VISUAL MONITORING</span><h3>CCTV Surveillance</h3>
-                <ul><li>Records or displays activity for monitoring and later review.</li><li>Footage may help identify an incident after it occurs.</li><li>By itself, recording footage does not necessarily trigger an immediate physical deterrent.</li></ul>
+                <span className="comparison-icon cctv-icon" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M7 17h22a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5H7z"/><path d="m34 21 8-5v17l-8-5M15 32v8m-5 0h15"/><circle cx="14" cy="24" r="3"/></svg></span>
+                <h3>CCTV</h3><p>Monitor and review recorded activity.</p>
               </div>
             </article>
-            <div className="comparison-join" aria-hidden="true"><span>+</span><small>Complementary layers</small></div>
             <article className="comparison-card ace-card">
-              <div className="comparison-visual" role="img" aria-label="Illustration of a SequrePlus Ace security controller">
-                <div className="ace-visual-device"><span className="ace-visual-mark"><WorkflowIcon kind="hub" /></span><b>SEQUREPLUS</b><strong>Ace</strong><i /></div>
-                <div className="ace-signal signal-one" /><div className="ace-signal signal-two" />
-              </div>
               <div className="comparison-card-content">
-                <span className="comparison-kicker">ACTIVE DETECTION &amp; ALERTS</span><h3>SequrePlus Ace</h3>
-                <ul><li>Monitors protected doors, windows and configured areas through compatible sensors.</li><li>Triggers a loud siren when a qualifying configured security event activates the alarm.</li><li>Initiates calls to configured registered contacts so they can respond promptly.</li><li>Helps deter potential intruders and supports a faster response to suspected unauthorized entry.</li></ul>
+                <span className="comparison-icon ace-icon" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M24 5 39 11v11c0 10-6.4 16.8-15 21-8.6-4.2-15-11-15-21V11z"/><path d="m16.5 24 5 5 10-11"/></svg></span>
+                <h3>SequrePlus Ace</h3><p>Detect, alert, and help deter unauthorized entry.</p>
               </div>
             </article>
           </div>
-          <div className="comparison-closing"><h3>Protect Your Valuables Before It&apos;s Too Late.</h3><p>Don&apos;t rely on footage alone. Add SequrePlus Ace as another layer of protection for your home, shop or business. For a more comprehensive security setup, use active detection and alerts alongside CCTV surveillance.</p><a className="button button-teal" href="#contact">Protect My Property <Arrow diagonal /></a></div>
         </div>
       </section>
 
