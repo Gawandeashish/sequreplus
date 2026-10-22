@@ -1,8 +1,9 @@
+import { BRAND_NAME } from "@/config/brand";
 import SolutionSelector from "./solution-selector";
 
 const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER?.replace(/\D/g, "");
 const whatsappLink = whatsappNumber
-  ? `https://wa.me/${whatsappNumber}?text=${encodeURIComponent("Hi SequrePlus, I'd like to explore a security solution for my property.")}`
+  ? `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(`Hi ${BRAND_NAME}, I'd like to explore a security solution for my property.`)}`
   : "#contact";
 
 function Arrow({ diagonal = false }: { diagonal?: boolean }) {
@@ -11,9 +12,9 @@ function Arrow({ diagonal = false }: { diagonal?: boolean }) {
 
 function Brand({ light = false }: { light?: boolean }) {
   return (
-    <a className={`brand${light ? " brand-light" : ""}`} href="#home" aria-label="SequrePlus home">
+    <a className={`brand${light ? " brand-light" : ""}`} href="#home" aria-label={`${BRAND_NAME} home`}>
       <span className="brand-mark" aria-hidden="true"><span /></span>
-      <span className="brand-word">SEQURE<span>PLUS</span></span>
+      <span className="brand-word">{BRAND_NAME.split(/(?=[A-Z])/).map((part, index) => index === 0 ? part : <span key={`${part}-${index}`}>{part}</span>)}</span>
     </a>
   );
 }
@@ -76,30 +77,29 @@ export default function HomePage() {
         <div className="hero-inner page-width">
           <div className="hero-copy">
             <div className="eyebrow"><span className="eyebrow-line" /> Smart security for your property</div>
-            <h1 id="hero-title">Protect What<br /><span>Matters.</span></h1>
-            <p className="hero-tagline"><span>Stay Alert, Even When You’re Away.</span></p>
-            <p className="hero-description">Secure your home, shop or workplace with SequrePlus Ace. Connected sensors help monitor protected areas, while the system provides configured siren and calling alerts when qualifying security events are detected.</p>
+            <h1 id="hero-title">One Alert.<br /><span>A Chance to<br />Prevent Theft.</span></h1>
+            <p className="hero-tagline"><span>Detect Early. Respond in Time. Protect What Matters.</span></p>
+            <p className="hero-description">Add an active layer of security to your home or shop. {BRAND_NAME} Ace detects configured events, sounds a loud siren, and calls up to 5 registered contact numbers to help you respond quickly.</p>
             <div className="hero-actions">
               <a className="button button-teal" href="#contact">Protect My Property <Arrow diagonal /></a>
-              <a className="text-link" href="#how-it-works">Discover How It Works <Arrow /></a>
+              <a className="text-link" href="#how-it-works">How It Works <Arrow /></a>
             </div>
             <div className="hero-footnote"><span className="status-dot" /> A more informed way to protect your space</div>
           </div>
-          <div className="hero-visual" aria-label="Illustrative security system placeholder">
+          <div className="hero-visual" role="img" aria-label={`Illustration of the ${BRAND_NAME} security device protecting a property entry`}>
             <div className="visual-orbit orbit-one" /><div className="visual-orbit orbit-two" />
             <div className="visual-glow" />
             <div className="visual-card">
-              <div className="visual-card-top"><span>SEQUREPLUS</span><span className="live-pill"><i /> SYSTEM READY</span></div>
+              <div className="visual-card-top"><span>{BRAND_NAME.toUpperCase()}</span><span className="live-pill"><i /> SYSTEM READY</span></div>
               <div className="device-stage">
                 <div className="device-shadow" />
                 <div className="device"><div className="device-top" /><div className="device-face"><div className="device-lens"><i /></div><div className="device-indicator" /></div><div className="device-base" /></div>
-                <div className="device-caption"><span className="caption-icon">⌂</span><span><b>Protected entry</b><small>Illustrative device placeholder</small></span><span className="caption-check">✓</span></div>
+                <div className="device-caption"><span className="caption-icon">⌂</span><span><b>Protected entry</b><small>Connected entry-point sensor</small></span><span className="caption-check">✓</span></div>
               </div>
               <div className="visual-card-bottom"><span>SMART SECURITY</span><span>01 / 03</span></div>
             </div>
             <div className="visual-label label-top"><span className="label-dot" />Thoughtful protection</div>
             <div className="visual-label label-bottom">Designed around your property <span>↗</span></div>
-            <p className="image-note">Illustrative placeholder — actual product image to be added</p>
           </div>
         </div>
         <div className="hero-bottom page-width"><span>SECURITY THAT FITS REAL LIFE</span><span className="scroll-cue"><i /> Scroll to explore</span><span>01 — 04</span></div>
@@ -110,10 +110,10 @@ export default function HomePage() {
           <div className="workflow-heading">
             <div className="eyebrow"><span className="eyebrow-line" /> How it works</div>
             <h2 id="process-title">What Happens When Someone Tries to Enter?</h2>
-            <p>Discover how connected sensors, SequrePlus Ace and configured alerts work together to help protect your premises.</p>
+            <p>Discover how connected sensors, {BRAND_NAME} Ace and configured alerts work together to help protect your premises.</p>
           </div>
 
-          <div className="workflow-diagram" role="group" aria-label="Compatible configured sensors monitor a property, communicate with SequrePlus Ace and can trigger a loud siren and calls to up to five registered contact numbers.">
+          <div className="workflow-diagram" role="group" aria-label={`Compatible configured sensors monitor a property, communicate with ${BRAND_NAME} Ace and can trigger a loud siren and calls to up to five registered contact numbers.`}>
             <div className="workflow-stage sensor-stage">
               <div className="stage-heading"><span>STAGE A</span><h3>Sensors Around the Property</h3></div>
               <div className="property-scene" role="img" aria-label="House illustration with door, window, motion and vibration sensor markers">
@@ -141,7 +141,7 @@ export default function HomePage() {
 
             <div className="workflow-stage controller-stage">
               <div className="stage-heading"><span>STAGE B</span><h3>Central Controller</h3></div>
-              <div className="controller-illustration"><div className="controller-icon"><WorkflowIcon kind="hub" /></div><span className="controller-brand">SEQUREPLUS</span><h4>SequrePlus Ace</h4><p>Connects compatible sensors and coordinates the configured security response.</p></div>
+              <div className="controller-illustration"><div className="controller-icon"><WorkflowIcon kind="hub" /></div><span className="controller-brand">{BRAND_NAME.toUpperCase()}</span><h4>{BRAND_NAME} Ace</h4><p>Connects compatible sensors and coordinates the configured security response.</p></div>
             </div>
 
             <div className="flow-arrow controller-arrow" aria-label="The controller triggers configured alerts"><span>→</span></div>
@@ -156,7 +156,7 @@ export default function HomePage() {
 
           <div className="workflow-explain" aria-label="How the system works">
             <article><span>01</span><div><h4>Detect</h4><p>Compatible sensors monitor their configured areas.</p></div></article>
-            <article><span>02</span><div><h4>Coordinate</h4><p>SequrePlus Ace processes detected events according to its configuration.</p></div></article>
+            <article><span>02</span><div><h4>Coordinate</h4><p>{BRAND_NAME} Ace processes detected events according to its configuration.</p></div></article>
             <article><span>03</span><div><h4>Alert</h4><p>The configured response activates the siren and initiates calls to up to five registered contact numbers.</p></div></article>
           </div>
 
@@ -167,8 +167,8 @@ export default function HomePage() {
         <div className="page-width">
           <div className="comparison-heading">
             <div className="eyebrow">SMART SECURITY. PROACTIVE PROTECTION.</div>
-            <h2 id="cctv-comparison-title">CCTV Records. SequrePlus Alerts.</h2>
-            <p>CCTV can help you see what happened after an incident. SequrePlus Ace adds an active layer of security by detecting configured events, sounding a loud siren, and calling up to 5 registered contact numbers to help you respond quickly.</p>
+            <h2 id="cctv-comparison-title">CCTV Records. {BRAND_NAME} Alerts.</h2>
+            <p>CCTV can help you see what happened after an incident. {BRAND_NAME} Ace adds an active layer of security by detecting configured events, sounding a loud siren, and calling up to 5 registered contact numbers to help you respond quickly.</p>
           </div>
           <div className="comparison-cards">
             <article className="comparison-card cctv-card">
@@ -180,7 +180,7 @@ export default function HomePage() {
             <article className="comparison-card ace-card">
               <div className="comparison-card-content">
                 <span className="comparison-icon ace-icon" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M24 5 39 11v11c0 10-6.4 16.8-15 21-8.6-4.2-15-11-15-21V11z"/><path d="m16.5 24 5 5 10-11"/></svg></span>
-                <h3>SequrePlus Ace</h3><p>Detect, alert, and help deter unauthorized entry.</p>
+                <h3>{BRAND_NAME} Ace</h3><p>Detect, alert, and help deter unauthorized entry.</p>
               </div>
             </article>
           </div>
@@ -201,7 +201,7 @@ export default function HomePage() {
             <div className="eyebrow"><span className="eyebrow-line" /> Remote control</div>
             <h2 id="remote-control-title">Your Security. Under Your Control.</h2>
             <h3>Control Your Security Your Way</h3>
-            <p>If supported by the confirmed SequrePlus Ace configuration, activate or deactivate your system using a control method that fits your needs.</p>
+            <p>If supported by the confirmed {BRAND_NAME} Ace configuration, activate or deactivate your system using a control method that fits your needs.</p>
           </div>
           <div className="capability-confirmation" role="note"><b>Product details to confirm:</b> The available project files do not verify mobile application control, registered-number control or a key-fob remote. Confirm each capability against the supported Ace configuration before presenting it as available.</div>
           <div className="remote-control-cards">
@@ -224,13 +224,13 @@ export default function HomePage() {
               <p>If supported, a dedicated remote control, similar to a car key fob, may activate or deactivate your system. Confirm the device and behavior first.</p>
             </article>
           </div>
-          <p className="remote-control-note">Available control methods depend on the supported SequrePlus Ace configuration. No remote range or internet behavior is specified here.</p>
+          <p className="remote-control-note">Available control methods depend on the supported {BRAND_NAME} Ace configuration. No remote range or internet behavior is specified here.</p>
         </div>
       </section>
 
-      <section className="contact-section" id="contact" aria-labelledby="contact-title"><div className="contact-pattern" aria-hidden="true" /><div className="page-width contact-inner"><div className="eyebrow eyebrow-light"><span className="eyebrow-line" /> Your next step</div><h2 id="contact-title">Ready to Add Another Layer of Security?</h2><p>Tell us what you want to protect, and we’ll help you explore the right SequrePlus solution.</p><div className="contact-actions"><a className="button button-white" href={whatsappLink} target={whatsappNumber ? "_blank" : undefined} rel={whatsappNumber ? "noreferrer" : undefined} aria-label="Chat with SequrePlus on WhatsApp">Chat with us on WhatsApp <Arrow diagonal /></a><a className="contact-secondary" href={whatsappLink} target={whatsappNumber ? "_blank" : undefined} rel={whatsappNumber ? "noreferrer" : undefined}>Request a consultation <Arrow /></a></div>{!whatsappNumber && <p className="config-note">WhatsApp contact will be available once the business number is configured.</p>}</div><div className="contact-index">LET’S TALK <span>01 — 01</span></div></section>
+      <section className="contact-section" id="contact" aria-labelledby="contact-title"><div className="contact-pattern" aria-hidden="true" /><div className="page-width contact-inner"><div className="eyebrow eyebrow-light"><span className="eyebrow-line" /> Your next step</div><h2 id="contact-title">Ready to Add Another Layer of Security?</h2><p>Tell us what you want to protect, and we’ll help you explore the right {BRAND_NAME} solution.</p><div className="contact-actions"><a className="button button-white" href={whatsappLink} target={whatsappNumber ? "_blank" : undefined} rel={whatsappNumber ? "noreferrer" : undefined} aria-label={`Chat with ${BRAND_NAME} on WhatsApp`}>Chat with us on WhatsApp <Arrow diagonal /></a><a className="contact-secondary" href={whatsappLink} target={whatsappNumber ? "_blank" : undefined} rel={whatsappNumber ? "noreferrer" : undefined}>Request a consultation <Arrow /></a></div>{!whatsappNumber && <p className="config-note">WhatsApp contact will be available once the business number is configured.</p>}</div><div className="contact-index">LET’S TALK <span>01 — 01</span></div></section>
 
-      <footer className="site-footer"><div className="page-width"><div className="footer-main"><div className="footer-brand"><Brand light /><p>Protect What Matters.<br />Stay Alert, Even When You’re Away.</p></div><div className="footer-column"><span className="footer-label">EXPLORE</span><a href="#home">Home</a><a href="#solutions">Security solutions</a><a href="#how-it-works">How it works</a><a href="#remote-control">Remote control</a></div><div className="footer-column"><span className="footer-label">GET IN TOUCH</span><a href={whatsappLink} target={whatsappNumber ? "_blank" : undefined} rel={whatsappNumber ? "noreferrer" : undefined}>WhatsApp: {whatsappNumber ? `+${whatsappNumber}` : "Number to be added"}</a><a href="#contact">Contact: details to be added</a></div></div><div className="footer-bottom"><span>© {new Date().getFullYear()} SequrePlus. All rights reserved.</span><span>Thoughtful security for the spaces that matter.</span></div></div></footer>
+      <footer className="site-footer"><div className="page-width"><div className="footer-main"><div className="footer-brand"><Brand light /><p>Protect What Matters.<br />Stay Alert, Even When You’re Away.</p></div><div className="footer-column"><span className="footer-label">EXPLORE</span><a href="#home">Home</a><a href="#solutions">Security solutions</a><a href="#how-it-works">How it works</a><a href="#remote-control">Remote control</a></div><div className="footer-column"><span className="footer-label">GET IN TOUCH</span><a href={whatsappLink} target={whatsappNumber ? "_blank" : undefined} rel={whatsappNumber ? "noreferrer" : undefined}>WhatsApp: {whatsappNumber ? `+${whatsappNumber}` : "Number to be added"}</a><a href="#contact">Contact: details to be added</a></div></div><div className="footer-bottom"><span>© {new Date().getFullYear()} {BRAND_NAME}. All rights reserved.</span><span>Thoughtful security for the spaces that matter.</span></div></div></footer>
     </main>
   );
 }

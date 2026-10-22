@@ -1,10 +1,11 @@
 "use client";
 
 import { useState } from "react";
+import { BRAND_NAME } from "@/config/brand";
 
 const areas = [
   { name: "Home", title: "A more considered way to protect home", text: "Monitor the entry points that matter with compatible sensors, then receive the configured alert response when a qualifying event is detected.", detail: "Doors, windows & key areas", illustration: "home" },
-  { name: "Doors", title: "Keep an eye on every entry", text: "Door sensors can help you know when a protected entry point is opened, with SequrePlus Ace coordinating the configured response.", detail: "Entry-point monitoring", illustration: "door" },
+  { name: "Doors", title: "Keep an eye on every entry", text: `Door sensors can help you know when a protected entry point is opened, with ${BRAND_NAME} Ace coordinating the configured response.`, detail: "Entry-point monitoring", illustration: "door" },
   { name: "Windows", title: "Add awareness around windows", text: "Help protect vulnerable windows with compatible sensors configured for your property and receive alerts when qualifying activity is detected.", detail: "Window sensors", illustration: "window" },
   { name: "Shop", title: "Support your business after hours", text: "Configure sensors for selected business entry points and spaces, with a siren and calls to registered contacts as part of the response.", detail: "Business premises", illustration: "shop" },
   { name: "Open spaces", title: "Cover the spaces between entry points", text: "Explore compatible motion sensors for selected indoor or outdoor areas, configured to suit the way your property is used.", detail: "Configured motion detection", illustration: "open" },
