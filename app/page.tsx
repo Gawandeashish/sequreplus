@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { BRAND_NAME } from "@/config/brand";
 import SolutionSelector from "./solution-selector";
 
@@ -124,7 +125,14 @@ export default function HomePage() {
               <div className="visual-card-top"><span>{BRAND_NAME.toUpperCase()}</span><span className="live-pill"><i /> SYSTEM READY</span></div>
               <div className="device-stage">
                 <div className="device-shadow" />
-                <div className="device"><div className="device-top" /><div className="device-face"><div className="device-lens"><i /></div><div className="device-indicator" /></div><div className="device-base" /></div>
+                <Image
+                  className="device-artwork"
+                  src="/sequreplus-device.png"
+                  alt=""
+                  width={548}
+                  height={455}
+                  priority
+                />
                 <div className="device-caption"><span className="caption-icon">⌂</span><span><b>Protected entry</b><small>Connected entry-point sensor</small></span><span className="caption-check">✓</span></div>
               </div>
               <div className="visual-card-bottom"><span>SMART SECURITY</span><span>01 / 03</span></div>
