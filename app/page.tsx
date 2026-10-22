@@ -28,7 +28,7 @@ function Icon({ kind }: { kind: "home" | "shop" | "warehouse" }) {
   return <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">{paths[kind]}</svg>;
 }
 
-type WorkflowIconName = "door" | "window" | "motion" | "vibration" | "hub" | "siren" | "phone" | "app" | "remote";
+type WorkflowIconName = "door" | "window" | "motion" | "vibration" | "hub" | "siren" | "phone" | "app" | "remote" | "cellular" | "wifi" | "dual" | "wired" | "wireless" | "hybrid";
 
 function WorkflowIcon({ kind }: { kind: WorkflowIconName }) {
   const paths: Record<WorkflowIconName, React.ReactNode> = {
@@ -41,6 +41,12 @@ function WorkflowIcon({ kind }: { kind: WorkflowIconName }) {
     phone: <><rect x="7" y="2" width="10" height="20" rx="2" /><path d="M10 5h4m-3 14h2" /></>,
     app: <><rect x="6" y="2" width="12" height="20" rx="2" /><path d="M10 5h4m-5 5h2m4 0h.01m-6 3h2m4 0h.01m-6 3h2m4 0h.01" /></>,
     remote: <><rect x="6" y="2" width="12" height="20" rx="5" /><circle cx="12" cy="7" r="1.4" /><path d="M9.5 12h5m-5 4h5" /></>,
+    cellular: <><path d="M5 20V5m0 0L2.5 8M5 5l2.5 3M12 20V9m0 0L9.5 12M12 9l2.5 3M19 20v-6m0 0-2.5 3m2.5-3 2.5 3" /></>,
+    wifi: <><path d="M2 8.5a15.5 15.5 0 0 1 20 0M5 12a11 11 0 0 1 14 0m-10.5 3.5a5.5 5.5 0 0 1 7 0" /><circle cx="12" cy="19" r="1" /></>,
+    dual: <><rect x="3" y="3" width="10" height="18" rx="2" /><path d="M6 6h4m-3 12h2m7-10a7 7 0 0 1 6 0m-5 3a3.5 3.5 0 0 1 4 0m-2 3h.01" /></>,
+    wired: <><rect x="8" y="8" width="8" height="8" rx="1" /><path d="M12 8V3M12 16v5M8 12H3m13 0h5" /><circle cx="12" cy="3" r="1" /><circle cx="12" cy="21" r="1" /><circle cx="3" cy="12" r="1" /><circle cx="21" cy="12" r="1" /></>,
+    wireless: <><rect x="9" y="9" width="6" height="6" rx="1" /><path d="M6.2 6.2a8.2 8.2 0 0 0 0 11.6m11.6 0a8.2 8.2 0 0 0 0-11.6M3.4 3.4a12.2 12.2 0 0 0 0 17.2m17.2 0a12.2 12.2 0 0 0 0-17.2" /></>,
+    hybrid: <><rect x="8" y="8" width="8" height="8" rx="1" /><path d="M12 8V3M8 12H3m13 0h5m-9 4v5" /><circle cx="12" cy="3" r="1" /><circle cx="3" cy="12" r="1" /><circle cx="21" cy="12" r="1" /><path d="M18.5 4.5a5 5 0 0 1 2 2" /></>,
   };
 
   return <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">{paths[kind]}</svg>;
@@ -57,6 +63,31 @@ const workflowSensors: { kind: WorkflowIconName; title: string; description: str
   { kind: "window", title: "Window sensors", description: "Protected windows" },
   { kind: "motion", title: "Motion sensors", description: "Configured indoor or outdoor areas" },
   { kind: "vibration", title: "Vibration sensors", description: "Compatible protected surfaces" },
+];
+
+const systemOptionGroups = [
+  {
+    id: "connectivity-options",
+    number: "01",
+    title: "Connectivity",
+    description: "How supported communication and connected features work.",
+    options: [
+      { kind: "cellular" as const, title: "GSM-Based System", description: "Uses cellular connectivity for supported communication and alert features." },
+      { kind: "wifi" as const, title: "Wi-Fi-Based System", description: "Uses a Wi-Fi connection for supported connected features." },
+      { kind: "dual" as const, title: "GSM + Wi-Fi System", description: "Combines cellular and Wi-Fi connectivity where supported, offering more connectivity options." },
+    ],
+  },
+  {
+    id: "sensor-options",
+    number: "02",
+    title: "Sensor connection",
+    description: "How compatible sensors connect to the controller.",
+    options: [
+      { kind: "wired" as const, title: "Wired Sensor System", description: "Connects compatible sensors to the controller using physical wiring. Suitable where a wired installation is preferred." },
+      { kind: "wireless" as const, title: "Wireless Sensor System", description: "Uses compatible wireless sensors, reducing the need to run sensor cables." },
+      { kind: "hybrid" as const, title: "Hybrid Sensor System", description: "Supports compatible wired and wireless sensors in one system, offering greater installation flexibility." },
+    ],
+  },
 ];
 
 export default function HomePage() {
@@ -195,36 +226,86 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section className="system-options-section section-pad" id="system-options" aria-labelledby="system-options-title">
+        <div className="page-width">
+          <header className="system-options-heading">
+            <div className="eyebrow"><span className="eyebrow-line" /> Understand your options</div>
+            <h2 id="system-options-title">Not All Security Systems Work the Same Way.</h2>
+            <p>From connectivity to sensor installation, the right security setup depends on your property and needs. Understand the options before choosing your system.</p>
+          </header>
+
+          <div className="system-options-groups">
+            {systemOptionGroups.map((group) => (
+              <section className="system-options-group" key={group.id} aria-labelledby={`${group.id}-title`}>
+                <div className="system-options-group-heading">
+                  <span>{group.number}</span>
+                  <div><h3 id={`${group.id}-title`}>{group.title}</h3><p>{group.description}</p></div>
+                </div>
+                <div className="system-options-cards">
+                  {group.options.map((option) => (
+                    <article className="system-option-card" key={option.title}>
+                      <span className="system-option-icon" aria-hidden="true"><WorkflowIcon kind={option.kind} /></span>
+                      <h4>{option.title}</h4>
+                      <p>{option.description}</p>
+                    </article>
+                  ))}
+                </div>
+              </section>
+            ))}
+          </div>
+
+          <p className="system-options-note"><span className="system-options-note-icon" aria-hidden="true"><WorkflowIcon kind="hub" /></span><span><strong>Two different choices.</strong> Connectivity and sensor connection are separate. For example, GSM + Wi-Fi connectivity can be paired with wired and wireless sensors where the system supports that combination.</span></p>
+
+          <aside className="hybrid-recommendation" aria-labelledby="hybrid-recommendation-title">
+            <div className="hybrid-recommendation-copy">
+              <div className="hybrid-recommendation-label"><span className="eyebrow-line" /> Our recommendation</div>
+              <span className="hybrid-verification-status">Proposed setup · model specifications to confirm</span>
+              <h3 id="hybrid-recommendation-title">{BRAND_NAME} Hybrid</h3>
+              <p className="hybrid-tagline">Dual Connectivity. Flexible Sensor Setup.</p>
+              <p className="hybrid-description">A proposed configuration pairing GSM + Wi-Fi with compatible wired and wireless sensors may offer more installation flexibility. Confirm these specifications for the selected model before treating them as available features.</p>
+              <a className="button button-teal hybrid-cta" href="#contact">Explore {BRAND_NAME} Hybrid <Arrow diagonal /></a>
+            </div>
+            <ul className="hybrid-benefits" aria-label="Proposed configuration details">
+              <li>GSM + Wi-Fi connectivity</li>
+              <li>Wired + wireless sensor compatibility</li>
+              <li>Flexible installation options</li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+
       <section className="remote-control-section section-pad" id="remote-control" aria-labelledby="remote-control-title">
         <div className="page-width">
           <div className="remote-control-heading">
             <div className="eyebrow"><span className="eyebrow-line" /> Remote control</div>
             <h2 id="remote-control-title">Your Security. Under Your Control.</h2>
-            <h3>Control Your Security Your Way</h3>
-            <p>If supported by the confirmed {BRAND_NAME} Ace configuration, activate or deactivate your system using a control method that fits your needs.</p>
+            <p>Choose a control method that fits your setup.</p>
           </div>
-          <div className="capability-confirmation" role="note"><b>Product details to confirm:</b> The available project files do not verify mobile application control, registered-number control or a key-fob remote. Confirm each capability against the supported Ace configuration before presenting it as available.</div>
-          <div className="remote-control-cards">
-            <article className="remote-control-card">
-              <span className="confirmation-badge">Support to confirm</span>
-              <span className="remote-control-icon"><WorkflowIcon kind="app" /></span>
-              <h4>Mobile Application</h4>
-              <p>If supported, use the mobile application to activate or deactivate your system remotely. Confirm the app and supported behavior before publishing this as a feature.</p>
-            </article>
-            <article className="remote-control-card">
-              <span className="confirmation-badge">Support to confirm</span>
-              <span className="remote-control-icon"><WorkflowIcon kind="phone" /></span>
-              <h4>Registered Mobile Number</h4>
-              <p>If supported, use the mobile-phone control method associated with your registered number to manage the system. Confirm the supported steps first.</p>
-            </article>
-            <article className="remote-control-card">
-              <span className="confirmation-badge">Support to confirm</span>
-              <span className="remote-control-icon remote-fob"><WorkflowIcon kind="remote" /></span>
-              <h4>Simple Remote Control</h4>
-              <p>If supported, a dedicated remote control, similar to a car key fob, may activate or deactivate your system. Confirm the device and behavior first.</p>
-            </article>
+          <div className="remote-control-diagram">
+            <div className="remote-controller">
+              <span className="remote-controller-icon" aria-hidden="true"><WorkflowIcon kind="hub" /></span>
+              <span className="remote-controller-label">SECURITY CONTROLLER</span>
+              <h3>{BRAND_NAME} Ace</h3>
+            </div>
+            <div className="remote-control-connector" aria-hidden="true"><span /><span /><span /></div>
+            <div className="remote-control-cards">
+              <article className="remote-control-card">
+                <span className="remote-control-icon" aria-hidden="true"><WorkflowIcon kind="app" /></span>
+                <h3>Mobile Application</h3>
+                <p>Arm your security system through the supported mobile application.</p>
+              </article>
+              <article className="remote-control-card">
+                <span className="remote-control-icon" aria-hidden="true"><WorkflowIcon kind="phone" /></span>
+                <h3>Registered Mobile Number</h3>
+                <p>Phone-based control, where supported by your configuration.</p>
+              </article>
+              <article className="remote-control-card">
+                <span className="remote-control-icon remote-fob" aria-hidden="true"><WorkflowIcon kind="remote" /></span>
+                <h3>Simple Remote Control</h3>
+                <p>Use a dedicated remote, if supported by your configuration.</p>
+              </article>
+            </div>
           </div>
-          <p className="remote-control-note">Available control methods depend on the supported {BRAND_NAME} Ace configuration. No remote range or internet behavior is specified here.</p>
         </div>
       </section>
 
