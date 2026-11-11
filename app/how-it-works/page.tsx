@@ -1,5 +1,6 @@
-import ContentPage from "../content-page";
+import SiteNavigation from "../site-navigation";
+import Journey from "./journey";
 
 export default function HowItWorksPage() {
-  return <ContentPage page="howItWorks" />;
+  return <main><SiteNavigation /><Journey /></main>;
 }
