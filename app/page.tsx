@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { BRAND_NAME } from "@/config/brand";
 import SolutionSelector from "./solution-selector";
+import SiteNavigation from "./site-navigation";
 
 const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER?.replace(/\D/g, "");
 const whatsappLink = whatsappNumber
@@ -94,15 +95,7 @@ const systemOptionGroups = [
 export default function HomePage() {
   return (
     <main>
-      <header className="site-header" id="home">
-        <div className="nav-wrap">
-          <Brand />
-          <nav className="main-nav" aria-label="Main navigation">
-            <a href="#home">Home</a><a href="#solutions">Security solutions</a><a href="#how-it-works">How it works</a><a href="#remote-control">Remote control</a><a href="#contact">Contact</a>
-          </nav>
-          <a className="button button-small button-dark nav-cta" href="#contact">Protect my property <Arrow diagonal /></a>
-        </div>
-      </header>
+      <SiteNavigation />
 
       <section className="hero" aria-labelledby="hero-title">
         <div className="hero-grid" aria-hidden="true" />
@@ -137,8 +130,8 @@ export default function HomePage() {
               </div>
               <div className="visual-card-bottom"><span>SMART SECURITY</span><span>01 / 03</span></div>
             </div>
-            <div className="visual-label label-top"><span className="label-dot" />Thoughtful protection</div>
-            <div className="visual-label label-bottom">Designed around your property <span>↗</span></div>
+            
+
           </div>
         </div>
         <div className="hero-bottom page-width"><span>SECURITY THAT FITS REAL LIFE</span><span className="scroll-cue"><i /> Scroll to explore</span><span>01 — 04</span></div>
@@ -238,7 +231,7 @@ export default function HomePage() {
         <div className="page-width">
           <header className="system-options-heading">
             <div className="eyebrow"><span className="eyebrow-line" /> Understand your options</div>
-            <h2 id="system-options-title">Not All Security Systems Work the Same Way.</h2>
+            <h2 id="system-options-title">Not All Security Solutions Work the Same Way.</h2>
             <p>From connectivity to sensor installation, the right security setup depends on your property and needs. Understand the options before choosing your system.</p>
           </header>
 
@@ -290,12 +283,6 @@ export default function HomePage() {
             <p>Choose a control method that fits your setup.</p>
           </div>
           <div className="remote-control-diagram">
-            <div className="remote-controller">
-              <span className="remote-controller-icon" aria-hidden="true"><WorkflowIcon kind="hub" /></span>
-              <span className="remote-controller-label">SECURITY CONTROLLER</span>
-              <h3>{BRAND_NAME} Ace</h3>
-            </div>
-            <div className="remote-control-connector" aria-hidden="true"><span /><span /><span /></div>
             <div className="remote-control-cards">
               <article className="remote-control-card">
                 <span className="remote-control-icon" aria-hidden="true"><WorkflowIcon kind="app" /></span>
