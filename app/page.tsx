@@ -9,7 +9,9 @@ const whatsappLink = whatsappNumber
   : "#contact";
 
 function Arrow({ diagonal = false }: { diagonal?: boolean }) {
-  return <span aria-hidden="true" className="arrow">{diagonal ? "↗" : "→"}</span>;
+  return <svg aria-hidden="true" className="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+    {diagonal ? <><path d="M7 17 17 7" /><path d="M7 7h10v10" /></> : <><path d="M5 12h14" /><path d="m13 6 6 6-6 6" /></>}
+  </svg>;
 }
 
 function Icon({ kind }: { kind: "home" | "shop" | "warehouse" }) {
