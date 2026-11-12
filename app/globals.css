@@ -477,3 +477,85 @@
 @media(max-width:680px){.products-intro{padding:32px 20px 26px;text-align:left}.products-intro .eyebrow{justify-content:flex-start}.products-intro h1{font-size:35px;letter-spacing:-1.2px}.products-intro p{font-size:14px}.product-showcase{padding:24px 0 28px}.product-showcase-inner{width:calc(100% - 36px);grid-template-columns:minmax(0,1fr);gap:20px}.product-image-frame{width:min(100%,400px);aspect-ratio:1.2/1}.product-details>h2{font-size:32px}.product-feature-list{grid-template-columns:repeat(2,minmax(0,1fr))}.product-info-block{margin-top:14px;padding-top:11px}}
 @media(max-width:420px){.products-intro h1{font-size:32px}.product-details>h2{font-size:29px}.product-feature-list{grid-template-columns:1fr}.product-specifications dl>div{grid-template-columns:minmax(100px,.7fr) minmax(0,1.3fr);gap:10px}}
 @media(prefers-reduced-motion:reduce){.product-thumbnail,.placeholder-device{transition:none}}
+.installation-guide-page{min-height:calc(100vh - 82px);padding-bottom:80px;background:#f5f8fb}
+.installation-guide-intro{padding:62px 24px 38px;text-align:center;background:#fff}
+.installation-guide-intro .eyebrow{justify-content:center}
+.installation-guide-intro h1{margin:15px 0 10px;color:var(--navy);font-size:clamp(36px,4.5vw,54px);line-height:1.08;letter-spacing:-1.8px}
+.installation-guide-intro>p{max-width:690px;margin:0 auto;color:#52657b;font-size:17px;line-height:1.6}
+.installation-guide-wrap{width:min(1120px,calc(100% - 64px));margin:0 auto}
+.guide-tabs{display:flex;justify-content:center;gap:8px;margin:28px 0 22px;padding:7px;border:1px solid #e1e9ec;border-radius:10px;background:#fff;box-shadow:0 8px 26px #10233f08}
+.guide-tab{min-height:48px;padding:11px 22px;border:1px solid transparent;border-radius:7px;background:transparent;color:#52657b;font:inherit;font-size:14px;font-weight:700;cursor:pointer;transition:color .2s,background .2s,border-color .2s,box-shadow .2s}
+.guide-tab:hover{color:#087d70;background:#f2f9f7}
+.guide-tab.is-active{border-color:#10233f;background:#10233f;color:#fff;box-shadow:0 5px 14px #10233f21}
+.guide-tab:focus-visible,.sms-command-row button:focus-visible,.guide-tabs :focus-visible{outline:3px solid var(--teal);outline-offset:3px}
+.guide-tab-panel{min-height:310px;outline:none}
+.guide-tab-panel:focus-visible{outline:3px solid var(--teal);outline-offset:4px;border-radius:8px}
+.guide-coming-soon,.guide-content-pending{display:flex;min-height:300px;align-items:center;justify-content:center;flex-direction:column;padding:40px;text-align:center;border:1px solid #e1e9ec;border-radius:14px;background:linear-gradient(145deg,#fff,#f8fbfc);box-shadow:0 15px 42px #10233f08}
+.guide-coming-icon{width:48px;height:48px;display:grid;place-items:center;border-radius:50%;background:#e5f4f1;color:#087d70;font-size:27px;font-weight:400}
+.guide-coming-kicker,.guide-pending-label{margin:18px 0 7px;color:#087d70;font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase}
+.guide-coming-soon h3,.guide-content-pending h3{margin:0 0 9px;color:var(--navy);font-size:27px;letter-spacing:-.5px}
+.guide-coming-soon>p:last-child,.guide-content-pending>p:last-child{max-width:510px;margin:0;color:#52657b;font-size:15px;line-height:1.65}
+.guide-content-pending code{padding:2px 5px;border-radius:3px;background:#eef4f6;color:#10233f;font-size:.9em}
+.wireless-guide-content{display:grid;gap:14px}
+.guide-section{padding:23px 25px;border:1px solid #e1e9ec;border-radius:11px;background:#fff;box-shadow:0 9px 28px #10233f06}
+.guide-section-heading{display:flex;align-items:center;gap:13px;margin-bottom:16px}
+.guide-section-heading>span{flex:none;width:38px;height:38px;display:grid;place-items:center;border-radius:50%;background:#e5f4f1;color:#087d70;font-size:12px;font-weight:800}
+.guide-section-heading p{margin:0 0 2px;color:#718196;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase}
+.guide-section-heading h3{margin:0;color:var(--navy);font-size:21px;line-height:1.25;letter-spacing:-.4px}
+.guide-start-grid,.guide-info-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.guide-list-card,.guide-info-card{padding:16px;border:1px solid #e8eef1;border-radius:8px;background:#f9fbfc}
+.guide-list-card h4,.guide-info-card h4,.guide-step-content h4{margin:0 0 10px;color:var(--navy);font-size:15px}
+.guide-checklist{display:grid;gap:8px;margin:0;padding:0;list-style:none}
+.guide-checklist li{position:relative;padding-left:22px;color:#40566c;font-size:14px;line-height:1.55}
+.guide-checklist li:before{content:"✓";position:absolute;left:0;top:0;color:#087d70;font-weight:800}
+.guide-steps-list{display:grid;gap:10px}
+.guide-step-card{display:grid;grid-template-columns:42px minmax(0,1fr);gap:14px;padding:17px;border:1px solid #e8eef1;border-radius:8px;background:#fbfcfd}
+.guide-step-number{width:34px;height:34px;display:grid;place-items:center;border:1px solid #bcded8;border-radius:50%;background:#e5f4f1;color:#087d70;font-size:11px;font-weight:800}
+.guide-step-content h4{font-size:16px}
+.guide-step-content ol{display:grid;gap:6px;margin:0;padding-left:19px;color:#40566c;font-size:14px;line-height:1.6}
+.guide-step-content ol li{padding-left:3px}
+.guide-media-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:13px}
+.guide-media-grid figure{margin:0}.guide-media-grid img{display:block;width:100%;height:auto;border-radius:7px;border:1px solid #e1e9ec}.guide-media-grid figcaption{margin-top:6px;color:#64778a;font-size:12px}
+.guide-video{position:relative;aspect-ratio:16/9;overflow:hidden;border-radius:7px;background:#10233f}.guide-video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.guide-download{display:flex;align-items:center;gap:9px;padding:13px;border:1px solid #dfe8eb;border-radius:7px;color:#087d70;font-size:13px;font-weight:700}.guide-download>span{font-size:20px}.guide-download small{margin-left:auto;color:#718196;font-weight:500}
+.sms-command-group,.guide-faq{border:1px solid #e2e9ed;border-radius:8px;background:#fff}.sms-command-group+.sms-command-group,.guide-faq+.guide-faq{margin-top:9px}
+.sms-command-group summary,.guide-faq summary{display:flex;align-items:center;justify-content:space-between;gap:15px;padding:15px 17px;color:var(--navy);font-size:14px;font-weight:700;cursor:pointer;list-style:none}
+.sms-command-group summary::-webkit-details-marker,.guide-faq summary::-webkit-details-marker{display:none}
+.sms-command-group summary span,.guide-faq summary span{color:#087d70;font-size:18px}
+.sms-command-group>p,.guide-faq>p{margin:0;padding:0 17px 14px;color:#52657b;font-size:14px;line-height:1.6}
+.sms-command-list{display:grid;gap:8px;padding:0 12px 12px}
+.sms-command-row{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:12px;padding:12px;border-radius:6px;background:#f5f8fb}
+.sms-command-row b{display:block;margin-bottom:5px;color:#40566c;font-size:12px}.sms-command-row p{margin:0 0 5px;color:#52657b;font-size:12px}
+.sms-command-row code{display:inline-block;overflow-wrap:anywhere;padding:5px 7px;border-radius:4px;background:#10233f;color:#c8f5eb;font-family:Consolas,monospace;font-size:13px}
+.sms-command-row button{min-width:70px;padding:8px 10px;border:1px solid #cfe1de;border-radius:5px;background:#fff;color:#087d70;font:inherit;font-size:12px;font-weight:700;cursor:pointer}
+.sms-command-row button:hover{background:#e7f5f2}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.guide-faq summary:focus-visible,.sms-command-group summary:focus-visible{outline:3px solid var(--teal);outline-offset:2px}
+@media(max-width:760px){.installation-guide-page{padding-bottom:54px}.installation-guide-intro{padding:43px 20px 28px;text-align:left}.installation-guide-intro .eyebrow{justify-content:flex-start}.installation-guide-intro h1{font-size:38px;letter-spacing:-1.2px}.installation-guide-intro>p{font-size:15px}.installation-guide-wrap{width:calc(100% - 36px)}.guide-tabs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:5px;margin:18px 0 15px;padding:5px}.guide-tab{padding:10px 8px;font-size:13px}.guide-tab:last-child{grid-column:1/-1}.guide-coming-soon,.guide-content-pending{min-height:260px;padding:25px 18px}.guide-section{padding:18px 16px}.guide-section-heading h3{font-size:19px}.guide-start-grid,.guide-info-grid{grid-template-columns:1fr}}
+@media(max-width:420px){.installation-guide-intro h1{font-size:33px}.installation-guide-wrap{width:calc(100% - 28px)}.guide-tabs{grid-template-columns:1fr}.guide-tab:last-child{grid-column:auto}.guide-tab{min-height:44px}.guide-step-card{grid-template-columns:34px minmax(0,1fr);gap:9px;padding:12px}.guide-step-number{width:30px;height:30px}.sms-command-row{grid-template-columns:1fr;align-items:start}.sms-command-row button{justify-self:start}}
+.guide-progress-toolbar{display:flex;align-items:center;justify-content:space-between;gap:16px;margin:0 0 13px;padding:10px 13px;border:1px solid #e3eaee;border-radius:7px;background:#f7fafb}
+.guide-progress-toolbar p{margin:0;color:#52657b;font-size:12px;font-weight:650}
+.guide-progress-toolbar button{padding:7px 10px;border:1px solid #cfdde2;border-radius:5px;background:#fff;color:#40566c;font:inherit;font-size:11px;font-weight:700;cursor:pointer;transition:color .18s,border-color .18s,background .18s}
+.guide-progress-toolbar button:hover:not(:disabled){border-color:#0f9d8a;background:#edf8f6;color:#087d70}
+.guide-progress-toolbar button:disabled{opacity:.5;cursor:not-allowed}
+.guide-progress-toolbar button:focus-visible{outline:3px solid var(--teal);outline-offset:2px}
+.guide-step-title-row{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:5px}
+.guide-step-title-row h4{margin:0}
+.guide-step-progress{flex:none;color:#087d70;font-size:11px;font-weight:750;white-space:nowrap}
+.guide-step-progress-bar{display:block;width:100%;height:5px;margin:0 0 12px;overflow:hidden;border:0;border-radius:99px;background:#e6edef;appearance:none}
+.guide-step-progress-bar::-webkit-progress-bar{border-radius:99px;background:#e6edef}
+.guide-step-progress-bar::-webkit-progress-value{border-radius:99px;background:#0f9d8a;transition:width .25s ease}
+.guide-step-progress-bar::-moz-progress-bar{border-radius:99px;background:#0f9d8a;transition:width .25s ease}
+.guide-step-tasks{display:grid;gap:8px;margin:0;padding:0;border:0;min-width:0}
+.guide-step-task{display:grid;grid-template-columns:18px minmax(0,1fr);align-items:start;gap:10px;padding:7px 9px;border-radius:5px;color:#40566c;font-size:14px;line-height:1.5;cursor:pointer;transition:background .2s,color .2s}
+.guide-step-task:hover{background:#f3f8f7}
+.guide-step-task input{width:17px;height:17px;margin:1px 0 0;accent-color:#0f9d8a;cursor:pointer}
+.guide-step-task input:focus-visible{outline:3px solid #0f9d8a;outline-offset:3px;border-radius:2px}
+.guide-step-task:has(input:disabled){cursor:wait}
+.guide-step-task-text{transition:color .2s,opacity .2s,text-decoration-color .2s}
+.guide-step-task.is-complete .guide-step-task-text{color:#718196;opacity:.82;text-decoration:line-through;text-decoration-color:#0f9d8a;text-decoration-thickness:1.5px}
+.guide-step-tasks:disabled .guide-step-task-text{opacity:.72}
+.guide-step-complete{display:flex;align-items:center;gap:7px;margin:10px 0 0;color:#087d70;font-size:12px;font-weight:800}
+.guide-step-complete span{display:grid;place-items:center;width:20px;height:20px;border-radius:50%;background:#e5f4f1;color:#087d70}
+@media(max-width:600px){.guide-progress-toolbar{align-items:flex-start;flex-direction:column;gap:9px}.guide-progress-toolbar button{align-self:flex-end}.guide-step-title-row{align-items:flex-start;flex-direction:column;gap:4px}.guide-step-progress{font-size:10px}.guide-step-task{font-size:13px}}
+@media(prefers-reduced-motion:reduce){.guide-progress-toolbar button,.guide-step-progress-bar::-webkit-progress-value,.guide-step-progress-bar::-moz-progress-bar,.guide-step-task,.guide-step-task-text{transition:none}}

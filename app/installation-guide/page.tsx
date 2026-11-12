@@ -1,5 +1,6 @@
-import ContentPage from "../content-page";
+import SiteNavigation from "../site-navigation";
+import InstallationGuide from "./installation-guide";
 
 export default function InstallationGuidePage() {
-  return <ContentPage page="installation" />;
+  return <main><SiteNavigation /><InstallationGuide /></main>;
 }
