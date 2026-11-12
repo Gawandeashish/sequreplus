@@ -31,6 +31,7 @@ export default function SiteFooter() {
         </nav>
         <div className="footer-column">
           <span className="footer-label">GET IN TOUCH</span>
+          <Link className="footer-registration-link" href="/register" target="_blank" rel="noreferrer">Customer Registration <span aria-hidden="true">↗</span></Link>
           <a href={whatsappHref} target={whatsappNumber ? "_blank" : undefined} rel={whatsappNumber ? "noreferrer" : undefined}>WhatsApp: {whatsappNumber ? `+${whatsappNumber}` : "Number to be added"}</a>
           <Link href="/contact">Contact: details to be added</Link>
         </div>

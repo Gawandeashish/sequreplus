@@ -8,7 +8,6 @@ import { BRAND_NAME } from "@/config/brand";
 const links = [
   { label: "How It Works", href: "/how-it-works" },
   { label: "Products", href: "/products" },
-  { label: "Installation Guide", href: "/installation-guide" },
   { label: "Contact", href: "/contact" },
 ];
 
