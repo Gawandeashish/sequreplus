@@ -12,14 +12,6 @@ function Arrow({ diagonal = false }: { diagonal?: boolean }) {
   return <span aria-hidden="true" className="arrow">{diagonal ? "↗" : "→"}</span>;
 }
 
-function Brand({ light = false }: { light?: boolean }) {
-  return (
-    <a className={`brand${light ? " brand-light" : ""}`} href="#home" aria-label={`${BRAND_NAME} home`}>
-      <Image className="brand-logo" src="/sequreplus-logo.png" alt="SequrePlus" width={1024} height={224} />
-    </a>
-  );
-}
-
 function Icon({ kind }: { kind: "home" | "shop" | "warehouse" }) {
   const paths = {
     home: <><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-6v-7h-4v7H4a1 1 0 0 1-1-1z" /><path d="M8 10h.01M16 10h.01" /></>,
@@ -305,7 +297,6 @@ export default function HomePage() {
 
       <section className="contact-section" id="contact" aria-labelledby="contact-title"><div className="contact-pattern" aria-hidden="true" /><div className="page-width contact-inner"><div className="eyebrow eyebrow-light"><span className="eyebrow-line" /> Your next step</div><h2 id="contact-title">Ready to Add Another Layer of Security?</h2><p>Tell us what you want to protect, and we’ll help you explore the right {BRAND_NAME} solution.</p><div className="contact-actions"><a className="button button-white" href={whatsappLink} target={whatsappNumber ? "_blank" : undefined} rel={whatsappNumber ? "noreferrer" : undefined} aria-label={`Chat with ${BRAND_NAME} on WhatsApp`}>Chat with us on WhatsApp <Arrow diagonal /></a><a className="contact-secondary" href={whatsappLink} target={whatsappNumber ? "_blank" : undefined} rel={whatsappNumber ? "noreferrer" : undefined}>Request a consultation <Arrow /></a></div>{!whatsappNumber && <p className="config-note">WhatsApp contact will be available once the business number is configured.</p>}</div><div className="contact-index">LET’S TALK <span>01 — 01</span></div></section>
 
-      <footer className="site-footer"><div className="page-width"><div className="footer-main"><div className="footer-brand"><Brand light /><p>Protect What Matters.<br />Stay Alert, Even When You’re Away.</p></div><div className="footer-column"><span className="footer-label">EXPLORE</span><a href="#home">Home</a><a href="#solutions">Security solutions</a><a href="#how-it-works">How it works</a><a href="#remote-control">Remote control</a></div><div className="footer-column"><span className="footer-label">GET IN TOUCH</span><a href={whatsappLink} target={whatsappNumber ? "_blank" : undefined} rel={whatsappNumber ? "noreferrer" : undefined}>WhatsApp: {whatsappNumber ? `+${whatsappNumber}` : "Number to be added"}</a><a href="#contact">Contact: details to be added</a></div></div><div className="footer-bottom"><span>© {new Date().getFullYear()} {BRAND_NAME}. All rights reserved.</span><span>Thoughtful security for the spaces that matter.</span></div></div></footer>
     </main>
   );
 }
