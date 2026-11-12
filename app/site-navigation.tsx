@@ -40,6 +40,7 @@ export default function SiteNavigation() {
         <nav className={`main-nav${open ? " is-open" : ""}`} id="primary-navigation" aria-label="Main navigation">
           <Link className="home-link" href="/" aria-label="Home" onClick={closeMenu}>
             <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-6v-7h-4v7H4a1 1 0 0 1-1-1z" /></svg>
+            <span className="home-link-label">Home</span>
           </Link>
           {links.map((link) => <a href={link.href} key={link.label} onClick={closeMenu}>{link.label}</a>)}
           <a className="button button-small button-dark nav-cta" href={protectedHref} target={whatsappNumber ? "_blank" : undefined} rel={whatsappNumber ? "noreferrer" : undefined} onClick={closeMenu}>Get Protected <span className="arrow" aria-hidden="true">↗</span></a>
