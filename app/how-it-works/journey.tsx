@@ -37,8 +37,8 @@ export default function Journey() {
       <div className="page-width journey-width">
         <header className="journey-heading">
           <div className="eyebrow"><span className="eyebrow-line" />One connected security system</div>
-          <h1 id="journey-title">How SequrePlus Keeps You Protected</h1>
-          <p>One smart device. Four simple steps towards better security.</p>
+          <h1 id="journey-title">How We Secure Your Property</h1>
+          <p>Experience how our security solutions help protect your home and business with smart detection, instant alarms, and real-time mobile alerts.</p>
         </header>
 
         <div className="journey-stages">

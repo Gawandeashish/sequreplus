@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { BRAND_NAME } from "@/config/brand";
 
 const links = [
@@ -34,8 +35,7 @@ export default function SiteNavigation() {
     <header className="site-header" id="home">
       <div className="nav-wrap">
         <Link className="brand" href="/" aria-label={`${BRAND_NAME} home`} onClick={closeMenu}>
-          <span className="brand-mark" aria-hidden="true"><span /></span>
-          <span className="brand-word">{BRAND_NAME.split(/(?=[A-Z])/).map((part, index) => index === 0 ? part : <span key={`${part}-${index}`}>{part}</span>)}</span>
+          <Image className="brand-logo" src="/sequreplus-logo.png" alt="SequrePlus" width={1024} height={224} priority />
         </Link>
         <nav className={`main-nav${open ? " is-open" : ""}`} id="primary-navigation" aria-label="Main navigation">
           <Link className="home-link" href="/" aria-label="Home" onClick={closeMenu}>

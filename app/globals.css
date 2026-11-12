@@ -559,3 +559,4 @@
 .guide-step-complete span{display:grid;place-items:center;width:20px;height:20px;border-radius:50%;background:#e5f4f1;color:#087d70}
 @media(max-width:600px){.guide-progress-toolbar{align-items:flex-start;flex-direction:column;gap:9px}.guide-progress-toolbar button{align-self:flex-end}.guide-step-title-row{align-items:flex-start;flex-direction:column;gap:4px}.guide-step-progress{font-size:10px}.guide-step-task{font-size:13px}}
 @media(prefers-reduced-motion:reduce){.guide-progress-toolbar button,.guide-step-progress-bar::-webkit-progress-value,.guide-step-progress-bar::-moz-progress-bar,.guide-step-task,.guide-step-task-text{transition:none}}
+.brand-logo{display:block;width:180px;height:auto;object-fit:contain}@media(max-width:1000px){.brand-logo{width:166px}}@media(max-width:760px){.brand-logo{width:170px}}@media(max-width:420px){.brand-logo{width:155px}}

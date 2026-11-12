@@ -15,8 +15,7 @@ function Arrow({ diagonal = false }: { diagonal?: boolean }) {
 function Brand({ light = false }: { light?: boolean }) {
   return (
     <a className={`brand${light ? " brand-light" : ""}`} href="#home" aria-label={`${BRAND_NAME} home`}>
-      <span className="brand-mark" aria-hidden="true"><span /></span>
-      <span className="brand-word">{BRAND_NAME.split(/(?=[A-Z])/).map((part, index) => index === 0 ? part : <span key={`${part}-${index}`}>{part}</span>)}</span>
+      <Image className="brand-logo" src="/sequreplus-logo.png" alt="SequrePlus" width={1024} height={224} />
     </a>
   );
 }
