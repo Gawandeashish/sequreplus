@@ -14,15 +14,6 @@ function Arrow({ diagonal = false }: { diagonal?: boolean }) {
   </svg>;
 }
 
-function Icon({ kind }: { kind: "home" | "shop" | "warehouse" }) {
-  const paths = {
-    home: <><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-6v-7h-4v7H4a1 1 0 0 1-1-1z" /><path d="M8 10h.01M16 10h.01" /></>,
-    shop: <><path d="M3 10v10h18V10M2 10l2-7h16l2 7a3 3 0 0 1-5 2 3 3 0 0 1-5 0 3 3 0 0 1-5 0 3 3 0 0 1-5-2Z" /><path d="M9 20v-5h6v5" /></>,
-    warehouse: <><path d="m3 9 9-6 9 6v11H3z" /><path d="M7 20v-7h10v7M7 9h.01M12 9h.01M17 9h.01" /></>,
-  };
-  return <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">{paths[kind]}</svg>;
-}
-
 type WorkflowIconName = "door" | "window" | "motion" | "vibration" | "hub" | "siren" | "phone" | "app" | "remote" | "cellular" | "wifi" | "dual" | "wired" | "wireless" | "hybrid";
 
 function WorkflowIcon({ kind }: { kind: WorkflowIconName }) {
@@ -46,12 +37,6 @@ function WorkflowIcon({ kind }: { kind: WorkflowIconName }) {
 
   return <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">{paths[kind]}</svg>;
 }
-
-const solutions = [
-  { number: "01", kind: "home" as const, title: "Home security", description: "Help protect selected doors and entry points while you’re home or away.", cta: "Explore home security" },
-  { number: "02", kind: "shop" as const, title: "Shop security", description: "Stay informed about configured security events at your business premises.", cta: "Explore shop security" },
-  { number: "03", kind: "warehouse" as const, title: "Bungalows & warehouses", description: "Explore practical security options for larger properties and storage spaces.", cta: "Discuss your property" },
-];
 
 const workflowSensors: { kind: WorkflowIconName; title: string; description: string }[] = [
   { kind: "door", title: "Door sensors", description: "Protected doors" },
