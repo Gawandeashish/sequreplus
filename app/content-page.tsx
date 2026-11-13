@@ -1,5 +1,5 @@
-import SiteNavigation from "./site-navigation";
-import { BRAND_NAME } from "@/config/brand";
+import SiteNavigation from "@/src/components/layout/site-navigation";
+import { BRAND_NAME } from "@/src/config/brand";
 
 const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER?.replace(/\D/g, "");
 const whatsappLink = whatsappNumber

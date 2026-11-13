@@ -1,7 +1,7 @@
 import Image from "next/image";
-import { BRAND_NAME } from "@/config/brand";
+import { BRAND_NAME } from "@/src/config/brand";
 import SolutionSelector from "./solution-selector";
-import SiteNavigation from "./site-navigation";
+import SiteNavigation from "@/src/components/layout/site-navigation";
 
 const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER?.replace(/\D/g, "");
 const whatsappLink = whatsappNumber
@@ -98,7 +98,7 @@ export default function HomePage() {
                 <div className="device-shadow" />
                 <Image
                   className="device-artwork"
-                  src="/sequreplus-device.png"
+                  src="/images/website/security-device.png"
                   alt=""
                   width={548}
                   height={455}

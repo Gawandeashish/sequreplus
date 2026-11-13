@@ -1,4 +1,4 @@
-import { BRAND_NAME } from "@/config/brand";
+import { BRAND_NAME } from "@/src/config/brand";
 
 const stages = [
   { id: "detect", number: "01", label: "DETECT", title: "Smart Threat Detection", text: "Compatible sensors monitor configured entry points and detect unexpected movement or unauthorized entry." },

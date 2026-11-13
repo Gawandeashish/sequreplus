@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import { BRAND_NAME } from "@/config/brand";
-import { socialLinks } from "@/config/social";
+import { BRAND_NAME } from "@/src/config/brand";
+import { socialLinks } from "@/src/config/social";
 
 const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER?.replace(/\D/g, "");
 const whatsappHref = whatsappNumber
@@ -19,7 +19,7 @@ export default function SiteFooter() {
     <div className="page-width">
       <div className="footer-main">
         <div className="footer-brand">
-          <Link className="brand brand-light" href="/" aria-label={`${BRAND_NAME} home`}><Image className="brand-logo" src="/sequreplus-logo-dark.png" alt="SequrePlus" width={2048} height={505} /></Link>
+          <Link className="brand brand-light" href="/" aria-label={`${BRAND_NAME} home`}><Image className="brand-logo" src="/images/logo/sequreplus-logo-dark.png" alt="SequrePlus" width={2048} height={505} /></Link>
           <p>Protect What Matters.<br />Stay Alert, Even When You’re Away.</p>
           <nav className="footer-socials" aria-label="Social media">
             {profiles.filter((profile): profile is typeof profile & { href: string } => Boolean(profile.href)).map((profile) => <a key={profile.name} href={profile.href} target="_blank" rel="noreferrer" aria-label={`SequrePlus on ${profile.name}`}><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">{profile.icon}</svg></a>)}

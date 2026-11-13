@@ -1,5 +1,5 @@
 import Link from "next/link";
-import SiteNavigation from "../site-navigation";
+import SiteNavigation from "@/src/components/layout/site-navigation";
 
 export default function TermsPage() {
   return <main>

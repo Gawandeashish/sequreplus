@@ -3,7 +3,7 @@
 import { useRef, useState, type FormEvent } from "react";
 import Link from "next/link";
 import emailjs from "@emailjs/browser";
-import { registrationConfig } from "@/config/registration";
+import { registrationConfig } from "@/src/config/registration";
 
 type Field = "firstName" | "lastName" | "address" | "phone" | "email" | "consent";
 type Values = Record<Field, string | boolean>;

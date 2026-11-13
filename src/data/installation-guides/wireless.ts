@@ -26,7 +26,7 @@ export const wirelessGuide: WirelessGuide = {
         "Connect the RF antenna to the other antenna port.",
         "Ensure both antennas are securely attached.",
       ],
-      image: "/images/installation/insert-sim.png",
+      image: "/images/installation/wireless/step-01.png",
     },
     {
       id: "power-on",
@@ -39,7 +39,7 @@ export const wirelessGuide: WirelessGuide = {
         "Confirm that the GSM LED blinks once every 3 seconds.",
       ],
       tip: "This usually takes 30–60 seconds.",
-      image: "/images/installation/power-on.png",
+      image: "/images/installation/wireless/step-02.png",
     },
     {
       id: "register-mobile",
@@ -51,7 +51,7 @@ export const wirelessGuide: WirelessGuide = {
         "Send the registration SMS from your mobile.",
       ],
       command: "S1,9876543210,11111",
-      image: "/images/installation/register-number.png",
+      image: "/images/installation/wireless/step-03.png",
     },
     {
       id: "registration-confirmation",
@@ -85,7 +85,7 @@ export const wirelessGuide: WirelessGuide = {
         "ADD,Z4",
         "ADD,R1",
       ],
-      image: "/images/installation/pair-sensors.png",
+      image: "/images/installation/wireless/step-05.png",
     },
     {
       id: "test-alarm",
@@ -100,7 +100,7 @@ export const wirelessGuide: WirelessGuide = {
         "Verify receipt of phone call and SMS alerts.",
         "Answer the call and press 1 to stop the alarm.",
       ],
-      image: "/images/installation/test-alarm.png",
+      image: "/images/installation/wireless/step-06.png",
     },
   ],
 
@@ -164,7 +164,7 @@ export const wirelessGuide: WirelessGuide = {
         "Keep the area in front of the sensor unobstructed.",
         "Mount parallel to the wall without tilting.",
       ],
-      image: "/images/installation/motion-sensor-mounting.png",
+      image: "/images/installation/wireless/sensor-placement.png",
     },
   ],
 

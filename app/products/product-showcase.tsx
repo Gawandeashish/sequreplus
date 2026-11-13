@@ -1,4 +1,4 @@
-import { BRAND_NAME } from "@/config/brand";
+import { BRAND_NAME } from "@/src/config/brand";
 import type { Product } from "@/src/data/products";
 import ProductImage from "./product-image";
 

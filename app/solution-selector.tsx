@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { BRAND_NAME } from "@/config/brand";
+import { BRAND_NAME } from "@/src/config/brand";
 
 const areas = [
   { name: "Home", title: "A more considered way to protect home", text: "Monitor the entry points that matter with compatible sensors, then receive the configured alert response when a qualifying event is detected.", detail: "Doors, windows & key areas", illustration: "home" },

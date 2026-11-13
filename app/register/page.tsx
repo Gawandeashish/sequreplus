@@ -1,4 +1,4 @@
-import SiteNavigation from "../site-navigation";
+import SiteNavigation from "@/src/components/layout/site-navigation";
 import RegistrationForm from "./registration-form";
 
 export default function RegistrationPage() {

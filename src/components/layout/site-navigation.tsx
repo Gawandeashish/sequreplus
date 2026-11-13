@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { BRAND_NAME } from "@/config/brand";
+import { BRAND_NAME } from "@/src/config/brand";
 
 const links = [
   { label: "How It Works", href: "/how-it-works" },
@@ -34,7 +34,7 @@ export default function SiteNavigation() {
     <header className="site-header" id="home">
       <div className="nav-wrap">
         <Link className="brand" href="/" aria-label={`${BRAND_NAME} home`} onClick={closeMenu}>
-          <Image className="brand-logo" src="/sequreplus-logo.png" alt="SequrePlus" width={1024} height={224} priority />
+          <Image className="brand-logo" src="/images/logo/sequreplus-logo.png" alt="SequrePlus" width={1024} height={224} priority />
         </Link>
         <nav className={`main-nav${open ? " is-open" : ""}`} id="primary-navigation" aria-label="Main navigation">
           <Link className="home-link" href="/" aria-label="Home" onClick={closeMenu}>

@@ -1,4 +1,4 @@
-import SiteNavigation from "../site-navigation";
+import SiteNavigation from "@/src/components/layout/site-navigation";
 import ProductShowcase from "./product-showcase";
 import { products } from "@/src/data/products";
 

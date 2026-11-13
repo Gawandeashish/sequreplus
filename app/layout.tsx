@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import { BRAND_NAME } from "@/config/brand";
-import SiteFooter from "./site-footer";
+import { BRAND_NAME } from "@/src/config/brand";
+import SiteFooter from "@/src/components/layout/site-footer";
 import "./globals.css";
 
 export const metadata: Metadata = {
