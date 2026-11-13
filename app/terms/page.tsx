@@ -11,7 +11,7 @@ export default function TermsPage() {
         <p className="content-page-description">Registration terms are being prepared. Please review the information below before using the customer registration form.</p>
         <div className="terms-notice" role="note"><strong>Publication pending</strong><p>SequrePlus has not yet published its complete customer terms. This page is an interim notice, not a substitute for the final terms. Do not treat registration as acceptance of terms that have not been provided.</p></div>
         <h2>Information and contact</h2>
-        <p>Customer registration is intended to collect only the name, address, phone number and email needed to identify a customer and discuss installation and product usage. The registration form is not connected to a secure registration service yet, and currently does not transmit or save the information entered.</p>
+        <p>Customer registration is intended to collect only the name, address, phone number and email needed to identify a customer and discuss installation and product usage. Submitted details and consent timestamp are sent to the designated business inbox. The website does not save registration details to an application database.</p>
         <h2>Installation information</h2>
         <p>Installation instructions depend on the product and configuration. Review the applicable guide and contact SequrePlus if you need help understanding setup or usage.</p>
         <h2>Customer rights</h2>
